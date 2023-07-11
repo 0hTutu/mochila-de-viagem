@@ -21,21 +21,25 @@ form.addEventListener('submit', (ev) => {
     }
 
     if(existe){
-        currentItem.id = existe.id
+        currentItem.id = existe.id;
+
+        updateElement(currentItem);
+
     } else {
-        currentItem.id = itens.length
+        currentItem.id = itens.length;
+        
         createElement(currentItem);
-        itens.push(currentItem)
+        itens.push(currentItem);
     }
 
     createElement(currentItem);
 
-    itens.push(currentItem)
+    itens.push(currentItem);
     
     localStorage.setItem('itens',JSON.stringify(itens));
     
-    nome.value = ''
-    quantidade.value = ''
+    nome.value = '';
+    quantidade.value = '';
 });
 
 function createElement(item) {
@@ -44,11 +48,15 @@ function createElement(item) {
 
     const numberItem = document.createElement('strong');
     numberItem.innerHTML = item.quantidade;
-    numberItem.dataset.id = item.id
-    newItem.appendChild(numberItem)
+    numberItem.dataset.id = item.id;
     
+    newItem.appendChild(numberItem);
     newItem.innerHTML += item.nome;
 
     list.appendChild(newItem);
+}
+
+function updateElement(){
+    document.querySelector("[data-id'"+item.id+"']").innerHTML = item.quantidade
 }
 
