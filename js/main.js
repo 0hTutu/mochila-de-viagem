@@ -1,4 +1,5 @@
 const form = document.getElementById('novoItem');
+const list = document.getElementsById('lista')
 
 form.addEventListener('submit', (ev) => {
     i.preventDefault();
@@ -7,9 +8,6 @@ form.addEventListener('submit', (ev) => {
 });
 
 function createElement(nome, quantidade) {
-    console.log(nome);
-    console.log(quantidade);
-
 //<li class="item"><strong>7</strong>Camisas</li>
     const newItem = document.createElement('li');
     newItem.classList.add('item');
@@ -19,8 +17,6 @@ function createElement(nome, quantidade) {
 
     newItem.appendChild(numberItem)
     newItem.innerHTML += nome;
-
-    const list = document.getElementsById('lista')
 
     list.appendChild(newItem)
 
