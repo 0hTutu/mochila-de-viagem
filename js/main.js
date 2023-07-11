@@ -20,10 +20,11 @@ form.addEventListener('submit', (ev) => {
         'quantidade': quantidade.value
     }
 
-    if(existe){
+    if(existe) {
         currentItem.id = existe.id;
-
         updateElement(currentItem);
+
+        itens[existe.id] = currentItem
 
     } else {
         currentItem.id = itens.length;
