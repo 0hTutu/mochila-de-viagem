@@ -20,4 +20,8 @@ function createElement(nome, quantidade) {
     newItem.appendChild(numberItem)
     newItem.innerHTML += nome;
 
+    const list = document.getElementsById('lista')
+
+    list.appendChild(newItem)
+
 }
